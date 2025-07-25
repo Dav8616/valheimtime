@@ -21,7 +21,7 @@
       min-height: 100%;
       object-fit: cover;
       z-index: -1;
-      filter: brightness(0.5) blur(2px);
+      filter: brightness(0.4) blur(2px);
     }
 
     .centered {
@@ -29,16 +29,27 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 5rem;
+      font-size: 6rem;
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
-      background: linear-gradient(270deg, #ff0000, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
-      background-size: 1000% 1000%;
+
+      /* 🌈 Animated rainbow text */
+      background: linear-gradient(270deg, #ff0040, #ff9900, #ffee00, #33ff00, #00ffee, #0066ff, #cc00ff, #ff0040);
+      background-size: 2000% 1000%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: rainbow 10s linear infinite, pulse 1.5s infinite;
-      text-shadow: 2px 2px 8px #000;
+      animation: rainbow 6s linear infinite, pulse 1.2s ease-in-out infinite;
+
+      /* 💥 Bloom-style glow */
+      text-shadow:
+        0 0 5px #fff,
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 30px #ff00ff,
+        0 0 40px #ff00ff,
+        0 0 55px #ff00ff,
+        0 0 75px #ff00ff;
     }
 
     @keyframes rainbow {
@@ -49,14 +60,13 @@
 
     @keyframes pulse {
       0%, 100% { transform: translate(-50%, -50%) scale(1); }
-      50% { transform: translate(-50%, -50%) scale(1.05); }
+      50% { transform: translate(-50%, -50%) scale(1.08); }
     }
-    
+
     body {
       background: url('fallback.jpg') no-repeat center center fixed;
       background-size: cover;
     }
-
   </style>
 </head>
 <body>
